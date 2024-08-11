@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>8.1.97.11000</PackageVersion>
-    <PackageId>Prism.Avalonia.Templates</PackageId>
+    <PackageId>SuessLabs.Prism.Avalonia.Templates</PackageId>
     <Title>Prism.Avalonia Templates</Title>
     <Authors>Damian Suess</Authors>
     <Copyright>Copyright (c) 2024 Xeno Innovations, Inc.</Copyright>
@@ -10,9 +10,9 @@
     <PackageTags>prism-avalonia;dotnet-new;templates;avalonia;prism;suesslabs;xenoinc;</PackageTags>
     <PackageProjectUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates.git</RepositoryUrl>
-    <!--<PackageIcon>Prism.Avalonia.png</PackageIcon>-->
+    <PackageIcon>Prism.Avalonia.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <!--<PackageReadmeFile>readme.md</PackageReadmeFile>-->
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeContentInPack>true</IncludeContentInPack>
     <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -24,5 +24,7 @@
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
     <Compile Remove="**\*" />
+    <None Include="readme.md" Pack="true" PackagePath="\" />
+    <None Include="Prism.Avalonia.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>

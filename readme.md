@@ -9,7 +9,7 @@ For more information about `dotnet new` templates see [here](https://blogs.msdn.
 Run from a command line:
 
 ```powershell
-dotnet new install Prism.Avalonia.Templates
+dotnet new install SuessLabs.Prism.Avalonia.Templates
 ```
 
 The templates are now be available in `dotnet new list`:
