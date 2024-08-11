@@ -18,9 +18,4 @@ public partial class MainWindow : Window
         var notifyService = ContainerLocator.Current.Resolve<INotificationService>();
         notifyService.SetHostWindow(this);
     }
-
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
-    }
 }

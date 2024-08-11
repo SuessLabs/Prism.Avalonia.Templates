@@ -18,6 +18,12 @@ dotnet new install Prism.Avalonia.Templates
 * [Code-of-Conduct](.github/Code-of-Conduct.md)
 * [Security Policy](.github/Security.md)
 
+### Local Test and Build
+
+```powershell
+.\install-dev-templates.ps1
+.\tests\build-test.ps1
+```
 
 ## References
 
