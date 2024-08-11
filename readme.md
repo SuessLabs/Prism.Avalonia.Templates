@@ -1,4 +1,4 @@
-# Prism.Avalonia .NET Templates
+# Prism.Avalonia Templates for `dotnet new`
 
 The [Prism.Avalonia Templates](https://github.com/SuessLabs/Prism.Avalonia.Templates/pull/4) is a collection of `dotnet` template files for creating [Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) apps.
 
