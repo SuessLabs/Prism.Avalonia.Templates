@@ -14,15 +14,15 @@ dotnet new install Prism.Avalonia.Templates
 
 The templates are now be available in `dotnet new list`:
 
-```
-Template Name                        Short Name                  Language  Tags
------------------------------------  --------------------------  --------  -----------------------------------------------------
-Prism.Avalonia .NET MVVM App         prism.avalonia.app          [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
-Prism.Avalonia .NET MVVM App Sample  prism.avalonia.app.sample   [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
-Prism.Avalonia .NET MVVM Dialog App  prism.avalonia.app.dialog   [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
-Prism Avalonia Event                 prism.avalonia.event        [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
-Prism Avalonia UserControl           prism.avalonia.usercontrol  [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
-Prism Avalonia Window                prism.avalonia.window       [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+```txt
+Template Name                         Short Name                  Language  Tags
+------------------------------------  --------------------------  --------  -----------------------------------------------------
+Prism.Avalonia .NET MVVM App          prism.avalonia.app          [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+Prism.Avalonia .NET MVVM App Sample   prism.avalonia.app.sample   [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+Prism.Avalonia .NET MVVM Dialog App   prism.avalonia.app.dialog   [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+Prism Avalonia Event                  prism.avalonia.event        [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+Prism Avalonia UserControl            prism.avalonia.usercontrol  [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+Prism Avalonia Window                 prism.avalonia.window       [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
 ```
 
 ## Contributing
