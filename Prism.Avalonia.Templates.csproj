@@ -4,6 +4,7 @@
     <PackageVersion>9.0.401</PackageVersion>
     <PackageId>Prism.Avalonia.Templates</PackageId>
     <Title>Prism.Avalonia Templates</Title>
+    <authors>Damian Suess</authors>
     <Description>Templates for creating Avalonia applications using the Prism framework.</Description>
     <PackageTags>prism-avalonia;dotnet-new;templates;avalonia;suesslabs;</PackageTags>
     <PackageProjectUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates</PackageProjectUrl>
