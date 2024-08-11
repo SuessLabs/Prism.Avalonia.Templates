@@ -10,7 +10,7 @@
         d:DesignWidth="600"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/prism-avalonia-logo.ico"
         mc:Ignorable="d">
 
   <!--

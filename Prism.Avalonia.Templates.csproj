@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>9.0.401</PackageVersion>
+    <PackageVersion>8.1.97.11000</PackageVersion>
     <PackageId>Prism.Avalonia.Templates</PackageId>
     <Title>Prism.Avalonia Templates</Title>
     <authors>Damian Suess</authors>

@@ -13,7 +13,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         _dialogService = dialogService;
 
-        Title = "My Dialog";
+        Title = "Prism.Avalonia Dialog App";
     }
 
     public DelegateCommand CmdShowDialog => new(() =>
@@ -35,7 +35,7 @@ public class MainWindowViewModel : ViewModelBase
                 ButtonResult.None => "Result is None",
                 ButtonResult.OK => "Result is OK",
                 ButtonResult.Cancel => "Result is Cancel",
-                _ => "I Don't know what you did!?"
+                _ => "Result was unknown"
             };
         });
     });
@@ -58,7 +58,7 @@ public class MainWindowViewModel : ViewModelBase
                 ButtonResult.None => "Result is None",
                 ButtonResult.OK => "Result is OK",
                 ButtonResult.Cancel => "Result is Cancel",
-                _ => "I Don't know what you did!?",
+                _ => "Result was unknown",
             };
         });
     });

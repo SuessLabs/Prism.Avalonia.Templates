@@ -88,12 +88,6 @@ function Test-Template {
   Exec { dotnet new prism.avalonia.usercontrol -o $outDir/$lang/$folderName -n NewUserControl }
   Exec { dotnet new prism.avalonia.window -o $outDir/$lang/$folderName -n NewWindow }
 
-  # Exec { dotnet new avalonia.resource -o $outDir/$lang/$folderName -n NewResourceDictionary }
-  # Exec { dotnet new avalonia.styles -o $outDir/$lang/$folderName -n NewStyles }
-  # Exec { dotnet new avalonia.usercontrol -o $outDir/$lang/$folderName -n NewUserControl -lang $lang }
-  # Exec { dotnet new avalonia.window -o $outDir/$lang/$folderName -n NewWindow -lang $lang }
-
-
   # Build
   Exec { dotnet build $outDir/$lang/$folderName -bl:$bl }
 }
@@ -130,44 +124,41 @@ if (Test-Path "output" -ErrorAction SilentlyContinue) {
   Remove-Item -Recurse -Force "output"
 }
 
-$outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
+$outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output"))
 if (Test-Path $outDir -ErrorAction SilentlyContinue) {
   Remove-Item -Recurse -Force $outDir
 }
 
-$binLogDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog"))
+## TODO: Place "binlog" in output folder
+$binLogDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output", "binlog"))
 if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
   Remove-Item -Recurse -Force $binLogDir
 }
 
 # Use same log file for all executions
-$binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
-
-# prism.avalonia.app (basic)
-# prism.avalonia.app.dialog
-# prism.avalonia.app.sample
+$binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output", "binlog", "test.binlog"))
 
 # Build the project only once with all item templates using .net8.0 tfm for C#
-Test-Template "prism.avalonia.app.sample" "AvaloniaMvvmItems" "C#" "A" "11.1.1" $binlog
+Test-Template "prism.avalonia.app.sample" "TestAvaloniaItems" "C#" "A" "11.1.1" $binlog
+
+# Bare-bones app
+Create-And-Build "prism.avalonia.app" "TestAvaloniaBase" "C#" "A" "11.1.1" $binlog
+# Create-And-Build "prism.avalonia.app" "TestAvaloniaBase6" "C#" "F" "net6.0" $binlog
 
 # Base MVVM App Template Tests
-Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
-Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
-# Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "F" "net6.0" $binlog
-# Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
+Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "A" "11.0.7" $binlog
+Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "A" "11.1.1" $binlog
+# Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "F" "net6.0" $binlog
+# Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog (COMING SOON!!)
 
 # Dialog App Template Tests
-Create-And-Build "prism.avalonia.app.dialog" "AvaloniaDialog" "C#" "A" "11.0.7" $binlog
-Create-And-Build "prism.avalonia.app.dialog" "AvaloniaDialog" "C#" "A" "11.1.1" $binlog
-
-# Bare-bones app (not implemented)
-# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "A" "11.1.0" $binlog
-# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "F" "net6.0" $binlog
+Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "11.0.7" $binlog
+Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "11.1.1" $binlog
 
 # desktop/android/ios/browser (not implemented)
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "f" "net8.0" $binlog
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "av" "11.1.0" $binlog
 
 # Ignore errors when files are still used by another process
-Write-Output "Cleanup output"
+Write-Output "Cleanup output (keeping, 'output/binlog')"
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/C#"
