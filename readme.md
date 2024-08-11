@@ -12,8 +12,15 @@ Run from a command line:
 dotnet new install Prism.Avalonia.Templates
 ```
 
+## Contributing
+
+* [Contributing](.github/Contributing.md)
+* [Code-of-Conduct](.github/Code-of-Conduct.md)
+* [Security Policy](.github/Security.md)
+
+
 ## References
 
-Templates based on [Avalonia .NET Templates](https://github.com/AvaloniaUI/avalonia-dotnet-templates)
+* Templates based on [Avalonia .NET Templates](https://github.com/AvaloniaUI/avalonia-dotnet-templates)
 
 Sponsored by: Suess Labs, Inc.<br/>- _skunkworks of Xeno Innovations_
