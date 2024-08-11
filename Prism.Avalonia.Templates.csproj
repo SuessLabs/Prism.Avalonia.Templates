@@ -5,8 +5,8 @@
     <PackageId>Prism.Avalonia.Templates</PackageId>
     <Title>Prism.Avalonia Templates</Title>
     <authors>Damian Suess</authors>
-    <Description>Templates for creating Avalonia applications using the Prism framework.</Description>
-    <PackageTags>prism-avalonia;dotnet-new;templates;avalonia;suesslabs;</PackageTags>
+    <Description>Templates for creating Avalonia applications the Prism.Avalonia framework.</Description>
+    <PackageTags>prism-avalonia;dotnet-new;templates;avalonia;prism;suesslabs;xenoinc;</PackageTags>
     <PackageProjectUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates.git</RepositoryUrl>
     <TargetFramework>netstandard2.0</TargetFramework>
