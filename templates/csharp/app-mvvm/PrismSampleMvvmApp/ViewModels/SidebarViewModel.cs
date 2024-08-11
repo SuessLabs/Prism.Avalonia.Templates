@@ -9,7 +9,6 @@ public class SidebarViewModel : ViewModelBase
     private const int Collapsed = 40;
     private const int Expanded = 200;
 
-    private readonly IRegionNavigationJournal? _journal;
     private readonly IRegionManager _regionManager;
     private int _flyoutWidth;
 
@@ -22,7 +21,6 @@ public class SidebarViewModel : ViewModelBase
 
     public DelegateCommand CmdDashboard => new(() =>
     {
-        //// _journal.Clear();
         _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
     });
 

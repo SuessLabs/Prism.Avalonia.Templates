@@ -147,7 +147,7 @@ $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.
 
 # Base MVVM App Template Tests
 Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
-#Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
+Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
 # Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "8.1.97.11073" $binlog
 # Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
 
