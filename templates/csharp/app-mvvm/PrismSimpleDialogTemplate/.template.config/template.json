@@ -1,0 +1,74 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Damian Suess",
+  "classifications": [
+    "Desktop",
+    "Xaml",
+    "Avalonia",
+    "Prism",
+    "Windows",
+    "Linux",
+    "macOS"
+  ],
+  "description": "A cross-platform Avalonia UI Application using the MVVM pattern with the Prism Framework",
+  "groupidentity": "Avalonia.Prism.Dialog",
+  "identity": "Avalonia.Prism.Dialog",
+  "name": "Avalonia Prism .NET Core MVVM Dialog App",
+  "preferNameDirectory": true,
+  "shortName": "avalonia.prism.dialog",
+  "sourceName": "PrismSimpleDialogTemplate",
+  "defaultName": "PrismSimpleDialog",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net8.0",
+          "description": "Target net8.0"
+        }
+      ],
+      "replaces": "net8.0",
+      "defaultValue": "net8.0"
+    },
+    "AvaloniaVersion": {
+      "type": "parameter",
+      "description": "The target version of Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "11.0.7",
+          "description": "Target 11.0.7"
+        },
+        {
+          "choice": "11.1.1",
+          "description": "Target 11.1.1 (Latest stable)"
+        }
+      ],
+      "replaces": "AvaloniaVersionTemplateParameter",
+      "defaultValue": "11.1.1"
+    },
+    "PrismVersion": {
+      "type": "parameter",
+      "description": "The target version of Prism.Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "8.1.97.11073",
+          "description": "Target 8.1.97.11073 (Latest stable)."
+        }
+      ],
+      "replaces": "PrismVersionTemplateParameter",
+      "defaultValue": "8.1.97.11073"
+    },
+    "AvaloniaStableChosen": {
+      "type": "computed",
+      "value": "(AvaloniaVersion == \"11.1.1\")"
+    }
+  }
+}
