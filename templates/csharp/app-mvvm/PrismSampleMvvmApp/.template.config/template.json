@@ -10,7 +10,7 @@
     "Linux",
     "macOS"
   ],
-  "description": "A cross-platform Avalonia UI Application using Prism Framwork with the MVVM pattern.",
+  "description": "A cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
   "groupidentity": "Avalonia.Prism.sample",
   "identity": "Avalonia.Prism.Sample",
   "name": "Prism Avalonia .NET MVVM Sample App",

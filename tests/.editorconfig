@@ -1,0 +1,25 @@
+# Copyright 2022 Xeno Innovations, Inc.
+# https://github.com/xenoinc/CodeDevOps
+
+# All generic files should use MSDOS style endings, not Unix (lf)
+[*]
+end_of_line = crlf
+indent_style = space
+
+# Shell script files
+[*.sh]
+end_of_line = lf
+indent_style = space
+indent_size = 2
+
+# Powershell
+[*.{ps1,psd1,psm1}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+[*.md]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
