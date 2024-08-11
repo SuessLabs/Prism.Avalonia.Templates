@@ -13,4 +13,4 @@ dotnet new install Prism.Avalonia.Templates
 ```
 
 
-Sponsored by: Suess Labs, Inc. - _skunkworks of Xeno Innovations_
+Sponsored by: Suess Labs, Inc.<br/>- _skunkworks of Xeno Innovations_

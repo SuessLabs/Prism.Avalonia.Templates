@@ -1,0 +1,74 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Damian Suess",
+  "classifications": [
+    "Desktop",
+    "Xaml",
+    "Avalonia",
+    "Prism",
+    "Windows",
+    "Linux",
+    "macOS"
+  ],
+  "description": "A cross-platform Avalonia UI Application using Prism Framwork with the MVVM pattern.",
+  "groupidentity": "Avalonia.Prism.sample",
+  "identity": "Avalonia.Prism.Sample",
+  "name": "Prism Avalonia .NET MVVM Sample App",
+  "preferNameDirectory": true,
+  "shortName": "avalonia.prism.sample",
+  "sourceName": "PrismSampleMvvmApp",
+  "defaultName": "PrismSampleTemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0",
+          "description": "Target net6.0"
+        }
+      ],
+      "replaces": "net6.0",
+      "defaultValue": "net6.0"
+    },
+    "AvaloniaVersion": {
+      "type": "parameter",
+      "description": "The target version of Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "0.10.18",
+          "description": "Target 0.10.18 (Latest stable)."
+        },
+        {
+          "choice": "11.0.0-preview4",
+          "description": "Target 11.0.0-preview4"
+        }
+      ],
+      "replaces": "AvaloniaVersionTemplateParameter",
+      "defaultValue": "0.10.18"
+    },
+    "PrismVersion": {
+      "type": "parameter",
+      "description": "The target version of Prism.Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "8.1.97.2",
+          "description": "Target 8.1.97.2 (Latest stable)."
+        }
+      ],
+      "replaces": "PrismVersionTemplateParameter",
+      "defaultValue": "8.1.97.2"
+    },
+    "AvaloniaStableChosen": {
+      "type": "computed",
+      "value": "(AvaloniaVersion == \"0.10.18\")"
+    }
+  }
+}
