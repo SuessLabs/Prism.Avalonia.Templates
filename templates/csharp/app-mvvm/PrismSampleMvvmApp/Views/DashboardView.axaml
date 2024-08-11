@@ -4,8 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:vm="using:PrismSampleMvvmApp.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="PrismSampleMvvmApp.Views.DashboardView">
+             x:Class="PrismSampleMvvmApp.Views.DashboardView"
+             x:DataType="vm:DashboardViewModel">
   <UserControl.Styles>
     <!--<Style Selector="Button.cmdBtn">-->
     <Style Selector="Button">

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Regions;
 
 namespace PrismSampleMvvmApp.ViewModels;

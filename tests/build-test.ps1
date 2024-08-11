@@ -73,7 +73,8 @@ function Test-Template {
     [Parameter(Position=5,Mandatory=0)][string]$bl
   )
 
-  $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
+  # $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
+  $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output"))
   $folderName = $name + $parameterName + $value
 
   # Remove dots and - from folderName because in sln it will cause errors when building project
@@ -147,12 +148,12 @@ $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.
 # prism.avalonia.app.sample
 
 # Build the project only once with all item templates using .net8.0 tfm for C#
-Test-Template "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
+Test-Template "prism.avalonia.app.sample" "AvaloniaMvvmItems" "C#" "A" "11.1.1" $binlog
 
 # Base MVVM App Template Tests
 Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
 Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
-# Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "P" "8.1.97.11073" $binlog
+# Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "F" "net6.0" $binlog
 # Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
 
 # Dialog App Template Tests
@@ -168,5 +169,5 @@ Create-And-Build "prism.avalonia.app.dialog" "AvaloniaDialog" "C#" "A" "11.1.1" 
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "av" "11.1.0" $binlog
 
 # Ignore errors when files are still used by another process
+Write-Output "Cleanup output"
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/C#"
-

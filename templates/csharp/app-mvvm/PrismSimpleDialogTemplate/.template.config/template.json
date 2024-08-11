@@ -4,18 +4,19 @@
   "classifications": [
     "Desktop",
     "Xaml",
+    "Axaml",
     "Avalonia",
     "Prism",
     "Windows",
     "Linux",
     "macOS"
   ],
-  "description": "A cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
-  "groupidentity": "Prism.Avalonia.Dialog",
-  "identity": "Prism.Avalonia.Dialog",
+  "description": "A cross-platform Avalonia UI Application using the Prism.Avalonia framework with dialogs.",
+  "groupidentity": "Prism.Avalonia.App.Dialog",
+  "identity": "Prism.Avalonia.App.Dialog",
   "name": "Prism.Avalonia .NET MVVM Dialog App",
   "preferNameDirectory": true,
-  "shortName": "prism.avalonia.dialog",
+  "shortName": "prism.avalonia.app.dialog",
   "sourceName": "PrismSimpleDialogTemplate",
   "defaultName": "PrismSimpleDialog",
   "tags": {
