@@ -11,11 +11,11 @@
     "macOS"
   ],
   "description": "A cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
-  "groupidentity": "Avalonia.Prism.sample",
-  "identity": "Avalonia.Prism.Sample",
-  "name": "Prism Avalonia .NET MVVM Sample App",
+  "groupidentity": "Prism.Avalonia.App",
+  "identity": "Prism.Avalonia.App",
+  "name": "Prism.Avalonia .NET MVVM App",
   "preferNameDirectory": true,
-  "shortName": "avalonia.prism.sample",
+  "shortName": "prism.avalonia.app",
   "sourceName": "PrismSampleMvvmApp",
   "defaultName": "PrismSampleTemplate",
   "tags": {
@@ -29,8 +29,12 @@
       "datatype": "choice",
       "choices": [
         {
+          "choice": "net6.0",
+          "description": "Target net6.0"
+        },
+        {
           "choice": "net8.0",
-          "description": "Target net8.0"
+          "description": "Target net8.0 (default)"
         }
       ],
       "replaces": "net8.0",

@@ -11,9 +11,9 @@
     "macOS"
   ],
   "description": "A cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
-  "groupidentity": "Pris.Avalonia.Dialog",
-  "identity": "Avalonia.Prism.Dialog",
-  "name": "Prism Avalonia .NET MVVM Dialog App",
+  "groupidentity": "Prism.Avalonia.Dialog",
+  "identity": "Prism.Avalonia.Dialog",
+  "name": "Prism.Avalonia .NET MVVM Dialog App",
   "preferNameDirectory": true,
   "shortName": "prism.avalonia.dialog",
   "sourceName": "PrismSimpleDialogTemplate",
