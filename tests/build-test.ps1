@@ -143,7 +143,7 @@ if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
 
 # Build the project only once with all item templates using .net8.0 tfm for C#
-# Test-Template "avalonia.prism.sample" "AvaloniaMvvm" "C#" "f" "net8.0" $binlog
+Test-Template "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
 
 # Base MVVM App Template Tests
 Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
@@ -152,7 +152,8 @@ Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlo
 # Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
 
 # Dialog App Template Tests
-#Create-And-Build "prism.avalonia.dialog" "AvaloniaDialog" "C#" "f" "net8.0" $binlog
+Create-And-Build "prism.avalonia.dialog" "AvaloniaDialog" "C#" "A" "11.0.7" $binlog
+Create-And-Build "prism.avalonia.dialog" "AvaloniaDialog" "C#" "A" "11.1.1" $binlog
 
 # Bare-bones app (not implemented)
 # Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "f" "net8.0" $binlog

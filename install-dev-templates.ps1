@@ -1,5 +1,7 @@
 dotnet new uninstall Prism.Avalonia.Templates
 Remove-Item bin/**/*.nupkg
+Remove-Item obj/**/ -Force -Recurse
+
 $result = dotnet pack | select-string "Successfully created package '(.*)'" -AllMatches
 $package = $result.Matches.Groups[1]
 dotnet new install $package
