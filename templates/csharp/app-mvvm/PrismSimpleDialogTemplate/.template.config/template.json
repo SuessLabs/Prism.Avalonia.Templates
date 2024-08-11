@@ -10,14 +10,14 @@
     "Linux",
     "macOS"
   ],
-  "description": "A cross-platform Avalonia UI Application using Prism Framwork with the MVVM pattern.",
-  "groupidentity": "Avalonia.Prism.sample",
-  "identity": "Avalonia.Prism.Sample",
-  "name": "Prism Avalonia .NET MVVM Sample App",
+  "description": "A cross-platform Avalonia UI Application using the MVVM pattern with the Prism Framework",
+  "groupidentity": "Avalonia.Prism.Dialog",
+  "identity": "Avalonia.Prism.Dialog",
+  "name": "Avalonia Prism .NET Core MVVM Dialog App",
   "preferNameDirectory": true,
-  "shortName": "avalonia.prism.sample",
-  "sourceName": "PrismSampleMvvmApp",
-  "defaultName": "PrismSampleTemplate",
+  "shortName": "avalonia.prism.dialog",
+  "sourceName": "PrismSimpleDialogTemplate",
+  "defaultName": "PrismSimpleDialog",
   "tags": {
     "language": "C#",
     "type": "project"
