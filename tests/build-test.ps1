@@ -146,11 +146,10 @@ $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.
 # Test-Template "avalonia.prism.sample" "AvaloniaMvvm" "C#" "f" "net8.0" $binlog
 
 # Base MVVM App Template Tests
+Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
 Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
-#Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "cb" "true" $binlog
-#Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "cb" "false" $binlog
-#Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "rvl" "true" $binlog
-#Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "rvl" "false" $binlog
+# Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "8.1.97.11073" $binlog
+# Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
 
 # Dialog App Template Tests
 #Create-And-Build "prism.avalonia.dialog" "AvaloniaDialog" "C#" "f" "net8.0" $binlog
@@ -158,18 +157,10 @@ Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlo
 # Bare-bones app (not implemented)
 # Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "f" "net8.0" $binlog
 # Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "av" "11.1.0" $binlog
-# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "cb" "true" $binlog
-# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "cb" "false" $binlog
 
 # desktop/android/ios/browser (not implemented)
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "f" "net8.0" $binlog
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "av" "11.1.0" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "m" "ReactiveUI" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "m" "CommunityToolkit" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "cb" "true" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "cb" "false" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "rvl" "true" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "rvl" "false" $binlog
 
 # Ignore errors when files are still used by another process
 Remove-Item -Recurse -Force -ErrorAction SilentlyContinue "output/C#"
