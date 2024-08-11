@@ -1,4 +1,4 @@
-# Copyright 2024 Xeno Innovations, Inc.
+# Copyright 2022 Xeno Innovations, Inc.
 # https://github.com/xenoinc/CodeDevOps
 # Revision: 6.3
 #
@@ -6,7 +6,7 @@
 # structures for your team's projects while preserving your personal defaults.
 #
 # Revision Log
-# 6.3 2023-12-16 - Reduced warnings, ignore generated XAML bullshit, added SVG
+# 6.3 2024-12-16 - Reduced warnings, ignore generated XAML bullshit, added SVG
 # 6.2 2023-xx-xx - Upgraded vsspell_code_analyzer into EditorConfig
 # 6.1 2022-01-21 - Updated rules to include StyleCopAnalyzers. Added Static ReadOnly PascalCase from _camelCase.
 # 6.0 2022-01-10 - Included defaults from Microsoft to override custom settings

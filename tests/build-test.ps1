@@ -142,22 +142,26 @@ if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
 # Use same log file for all executions
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "binlog", "test.binlog"))
 
+# prism.avalonia.app (basic)
+# prism.avalonia.app.dialog
+# prism.avalonia.app.sample
+
 # Build the project only once with all item templates using .net8.0 tfm for C#
-Test-Template "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
+Test-Template "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
 
 # Base MVVM App Template Tests
-Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
-Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
-# Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "8.1.97.11073" $binlog
-# Create-And-Build "avalonia.prism.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
+Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.0.7" $binlog
+Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "A" "11.1.1" $binlog
+# Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "P" "8.1.97.11073" $binlog
+# Create-And-Build "prism.avalonia.app.sample" "AvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog
 
 # Dialog App Template Tests
-Create-And-Build "prism.avalonia.dialog" "AvaloniaDialog" "C#" "A" "11.0.7" $binlog
-Create-And-Build "prism.avalonia.dialog" "AvaloniaDialog" "C#" "A" "11.1.1" $binlog
+Create-And-Build "prism.avalonia.app.dialog" "AvaloniaDialog" "C#" "A" "11.0.7" $binlog
+Create-And-Build "prism.avalonia.app.dialog" "AvaloniaDialog" "C#" "A" "11.1.1" $binlog
 
 # Bare-bones app (not implemented)
-# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "f" "net8.0" $binlog
-# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "av" "11.1.0" $binlog
+# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "A" "11.1.0" $binlog
+# Create-And-Build "prism.avalonia.app" "PrismAvaloniaApp" "C#" "F" "net6.0" $binlog
 
 # desktop/android/ios/browser (not implemented)
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "f" "net8.0" $binlog
