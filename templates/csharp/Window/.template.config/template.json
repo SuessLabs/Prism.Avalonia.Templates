@@ -1,0 +1,27 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Damian Suess",
+  "classifications": [ "Desktop", "Xaml", "Axaml", "Avalonia", "Prism", "Windows", "Linux", "macOS" ],
+  "defaultName": "Window",
+  "description": "A Prism Avalonia UI Window",
+  "groupidentity": "Prism.Avalonia.Window",
+  "identity": "Prism.Avalonia.Window",
+  "name": "Prism Avalonia Window",
+  "primaryOutputs": [
+    { "path": "NewWindow.axaml.cs" },
+    { "path": "NewWindow.axaml" }
+  ],
+  "shortName": "prism.avalonia.window",
+  "sourceName": "NewWindow",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code",
+      "replaces": "PrismAvaloniaTemplate.Namespace",
+      "type": "parameter"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
+}
