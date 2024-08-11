@@ -1,9 +1,4 @@
-﻿// ---------------------------------------------
-//      --- AvaloniaPrismTemplate by Scarementus ---
-//      ---        Licence MIT       ---
-// ---------------------------------------------
-
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Regions;
 using Prism.Services.Dialogs;
 
@@ -68,9 +63,5 @@ public class MainWindowViewModel : ViewModelBase
         });
     });
     
-    public string ReturnedResult
-    {
-        get => _returnedResult;
-        set => SetProperty(ref _returnedResult, value);
-    }
+    public string ReturnedResult { get => _returnedResult; set => SetProperty(ref _returnedResult, value); }
 }

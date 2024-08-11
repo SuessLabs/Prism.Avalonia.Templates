@@ -1,9 +1,4 @@
-﻿// ---------------------------------------------
-//      --- AvaloniaPrismTemplate by Scarementus ---
-//      ---        Licence MIT       ---
-// ---------------------------------------------
-
-using Avalonia;
+﻿using Avalonia;
 
 namespace PrismSimpleDialogTemplate;
 

@@ -1,9 +1,4 @@
-﻿// ---------------------------------------------
-//      --- AvaloniaPrismTemplate by Scarementus ---
-//      ---        Licence MIT       ---
-// ---------------------------------------------
-
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Regions;
 
 namespace PrismSimpleDialogTemplate.ViewModels;
@@ -12,14 +7,10 @@ public class ViewModelBase : BindableBase, INavigationAware
 {
     private string _title;
 
-    public string Title
-    {
-        get => _title;
-        set => SetProperty(ref _title, value);
-    }
+    public string Title { get => _title; set => SetProperty(ref _title, value); }
+        
     public void OnNavigatedTo(NavigationContext navigationContext)
     {
-        throw new System.NotImplementedException();
     }
 
     public bool IsNavigationTarget(NavigationContext navigationContext)

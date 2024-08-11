@@ -1,9 +1,4 @@
-﻿// ---------------------------------------------
-//      --- AvaloniaPrismTemplate by Scarementus ---
-//      ---        Licence MIT       ---
-// ---------------------------------------------
-
-using System;
+﻿using System;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using PrismSimpleDialogTemplate.ViewModels;

@@ -1,9 +1,4 @@
-﻿// ---------------------------------------------
-//      --- AvaloniaPrismTemplate by Scarementus ---
-//      ---        Licence MIT       ---
-// ---------------------------------------------
-
-using System;
+﻿using System;
 using Prism.Commands;
 using Prism.Services.Dialogs;
 
@@ -54,11 +49,7 @@ public class NotificationDialogViewModel : ViewModelBase, IDialogAware
         CustomMessage = parameters.GetValue<string>("message");
     }
 
-    public string CustomMessage
-    {
-        get => _customMessage;
-        set => SetProperty(ref _customMessage, value);
-    }
+    public string CustomMessage { get => _customMessage; set => SetProperty(ref _customMessage, value); }
 
     public virtual void RaiseRequestClose(IDialogResult dialogResult)
     {
