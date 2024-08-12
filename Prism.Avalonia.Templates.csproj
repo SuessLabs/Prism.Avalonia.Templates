@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageType>Template</PackageType>
     <PackageVersion>8.1.97.11000</PackageVersion>
-    <PackageId>SuessLabs.Prism.Avalonia.Templates</PackageId>
+    <PackageId>Templates.Prism.Avalonia</PackageId>
     <Title>Prism.Avalonia Templates</Title>
     <Authors>Damian Suess</Authors>
     <Copyright>Copyright (c) 2024 Xeno Innovations, Inc.</Copyright>
