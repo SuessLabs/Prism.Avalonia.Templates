@@ -1,4 +1,4 @@
-dotnet new uninstall SuessLabs.Prism.Avalonia.Templates
+dotnet new uninstall Templates.Prism.Avalonia
 
 if (Test-Path "bin/") { Remove-Item bin/**/*.nupkg }
 if (Test-Path "obj/") { Remove-Item obj/**/ -Force -Recurse }
