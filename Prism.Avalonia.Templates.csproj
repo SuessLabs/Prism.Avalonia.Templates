@@ -8,8 +8,8 @@
     <Copyright>Copyright (c) 2024 Xeno Innovations, Inc.</Copyright>
     <Description>The official templates for creating Prism.Avalonia applications using the Avalonia and Prism Library frameworks. This include empty projects, full, and dialog samples. As well as single items such as window, user control, and event templates.</Description>
     <PackageTags>prism-avalonia;dotnet-new;templates;avalonia;prism;suesslabs;xenoinc;</PackageTags>
-    <PackageProjectUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/DamianSuess/Prism.Avalonia.Templates.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/SuessLabs/Prism.Avalonia.Templates</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SuessLabs/Prism.Avalonia.Templates.git</RepositoryUrl>
     <PackageIcon>Prism.Avalonia.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>readme.md</PackageReadmeFile>
