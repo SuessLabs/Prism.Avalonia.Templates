@@ -14,7 +14,7 @@
   "description": "An empty cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
   "groupidentity": "Prism.Avalonia.App",
   "identity": "Prism.Avalonia.App",
-  "name": "Prism.Avalonia .NET MVVM App",
+  "name": "Prism.Avalonia .NET - Empty App",
   "preferNameDirectory": true,
   "shortName": "prism.avalonia.app",
   "sourceName": "SampleBaseApp",

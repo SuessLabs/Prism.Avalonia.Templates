@@ -14,7 +14,7 @@
   "description": "A cross-platform Avalonia UI Application using the Prism.Avalonia framework with dialogs.",
   "groupidentity": "Prism.Avalonia.App.Dialog",
   "identity": "Prism.Avalonia.App.Dialog",
-  "name": "Prism.Avalonia .NET MVVM Dialog App",
+  "name": "Prism.Avalonia .NET - Sample Dialog App",
   "preferNameDirectory": true,
   "shortName": "prism.avalonia.app.dialog",
   "sourceName": "PrismSimpleDialogTemplate",
