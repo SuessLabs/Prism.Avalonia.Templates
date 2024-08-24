@@ -77,6 +77,8 @@ function Test-Template {
     [Parameter(Position=5,Mandatory=0)][string]$bl
   )
 
+  Write-Verbose "Testing Template: $template"
+
   # $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
   $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output"))
   $folderName = $name + $parameterName + $value
@@ -106,6 +108,7 @@ function Create-And-Build {
     [Parameter(Position=5,Mandatory=0)][string]$bl
   )
 
+  Write-Verbose "Create-And-Build: $template"
   $folderName = $name + $parameterName + $value
 
   # Remove dots and - from folderName because in sln it will cause errors when building project

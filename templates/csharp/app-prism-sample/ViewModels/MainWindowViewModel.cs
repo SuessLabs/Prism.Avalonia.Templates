@@ -1,10 +1,10 @@
-﻿using Prism.Regions;
+﻿using Prism.Navigation.Regions;
 
 namespace PrismSampleMvvmApp.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-    public MainWindowViewModel(IRegionManager regionManager)
+    public MainWindowViewModel()
     {
         // Since this is a basic ShellWindow, there's nothing to do here.
         // For enterprise apps, you could register up subscriptions

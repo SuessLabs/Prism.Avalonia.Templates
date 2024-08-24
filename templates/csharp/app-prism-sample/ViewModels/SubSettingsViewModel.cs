@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PrismSampleMvvmApp.Views;
 using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 
 namespace PrismSampleMvvmApp.ViewModels;
 
@@ -33,9 +33,17 @@ public class SubSettingsViewModel : ViewModelBase
             _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
     });
 
-    public string MessageText { get => _messageText; set => SetProperty(ref _messageText, value); }
+    public string MessageText
+    {
+        get => _messageText;
+        set => SetProperty(ref _messageText, value);
+    }
 
-    public string MessageNumber { get => _messageNumber; set => SetProperty(ref _messageNumber, value); }
+    public string MessageNumber
+    {
+        get => _messageNumber;
+        set => SetProperty(ref _messageNumber, value);
+    }
 
     /// <summary>Navigation completed successfully.</summary>
     /// <param name="navigationContext">Navigation context.</param>
