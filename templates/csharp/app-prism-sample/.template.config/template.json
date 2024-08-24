@@ -30,10 +30,6 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "net6.0",
-          "description": "Target net6.0"
-        },
-        {
           "choice": "net8.0",
           "description": "Target net8.0 (default)"
         }
@@ -51,12 +47,12 @@
           "description": "Target 11.0.7"
         },
         {
-          "choice": "11.1.1",
-          "description": "Target 11.1.1 (Latest stable)"
+          "choice": "11.1.3",
+          "description": "Target 11.1.3 (Latest stable)"
         }
       ],
       "replaces": "AvaloniaVersionTemplateParameter",
-      "defaultValue": "11.1.1"
+      "defaultValue": "11.1.3"
     },
     "PrismVersion": {
       "type": "parameter",
@@ -64,16 +60,20 @@
       "datatype": "choice",
       "choices": [
         {
+          "choice": "9.0.537.11130",
+          "description": "Target 9.0.537.11130 (Latest stable)."
+        },
+        {
           "choice": "8.1.97.11073",
-          "description": "Target 8.1.97.11073 (Latest stable)."
+          "description": "Target 8.1.97.11073."
         }
       ],
       "replaces": "PrismVersionTemplateParameter",
-      "defaultValue": "8.1.97.11073"
+      "defaultValue": "9.0.537.11130"
     },
     "AvaloniaStableChosen": {
       "type": "computed",
-      "value": "(AvaloniaVersion == \"11.1.1\")"
+      "value": "(AvaloniaVersion == \"11.1.3\")"
     }
   }
 }
