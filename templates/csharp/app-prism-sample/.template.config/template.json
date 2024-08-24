@@ -14,7 +14,7 @@
   "description": "A full cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
   "groupidentity": "Prism.Avalonia.App.Sample",
   "identity": "Prism.Avalonia.App.Sample",
-  "name": "Prism.Avalonia .NET MVVM App Sample",
+  "name": "Prism.Avalonia .NET - Sample SideBar MVVM App",
   "preferNameDirectory": true,
   "shortName": "prism.avalonia.app.sample",
   "sourceName": "PrismSampleMvvmApp",
