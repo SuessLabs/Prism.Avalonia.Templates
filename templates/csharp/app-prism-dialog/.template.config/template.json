@@ -43,10 +43,6 @@
       "datatype": "choice",
       "choices": [
         {
-          "choice": "11.0.7",
-          "description": "Target 11.0.7"
-        },
-        {
           "choice": "11.1.3",
           "description": "Target 11.1.3 (Latest stable)"
         }
@@ -62,10 +58,6 @@
         {
           "choice": "9.0.537.11130",
           "description": "Target 9.0.537.11130 (Latest stable)."
-        },
-        {
-          "choice": "8.1.97.11073",
-          "description": "Target 8.1.97.11073."
         }
       ],
       "replaces": "PrismVersionTemplateParameter",
