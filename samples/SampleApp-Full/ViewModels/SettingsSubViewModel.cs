@@ -50,8 +50,8 @@ public class SettingsSubViewModel : ViewModelBase
     public override bool OnNavigatingTo(NavigationContext navigationContext)
     {
         Debug.WriteLine("OnNavigatingTo");
+
         // Navigation permission sample:
-        // Don't allow navigation if our keys are missing
         return navigationContext.Parameters.ContainsKey("key1") &&
                navigationContext.Parameters.ContainsKey("key2");
     }

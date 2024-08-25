@@ -20,7 +20,7 @@
 
     <!-- Main Content -->
     <ScrollViewer Margin="5">
-      <StackPanel>
+      <StackPanel Spacing="10">
         <Label Content="Click the button below to navigate to the sub page" />
         <Button Content="Navigate using Journaling" Command="{Binding CmdNavigateToChild}" />
       </StackPanel>
