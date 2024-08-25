@@ -23,4 +23,5 @@
     <PackageReference Include="Prism.Avalonia" Version="9.0.537.11130" />
     <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
   </ItemGroup>
+
 </Project>

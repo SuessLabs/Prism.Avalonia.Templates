@@ -4,8 +4,10 @@
              xmlns:local="using:SampleApp"
              RequestedThemeVariant="Default">
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
-  
   <Application.Styles>
     <FluentTheme />
+
+    <!-- Custom SVG glyphs -->
+    <StyleInclude Source="avares://SampleApp/Styles/Icons.axaml" />
   </Application.Styles>
 </Application>
