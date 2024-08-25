@@ -1,3 +1,4 @@
+using DryIoc;
 using Prism.Commands;
 using Prism.Dialogs;
 
@@ -12,7 +13,7 @@ public class MainWindowViewModel : ViewModelBase
     {
         _dialogService = dialogService;
 
-        Title = "Prism.Avalonia Dialog Sample App";
+        Title = "Prism.Avalonia - Dialog Sample App";
     }
 
     public string ReturnedResult { get => _returnedResult; set => SetProperty(ref _returnedResult, value); }
@@ -20,20 +21,32 @@ public class MainWindowViewModel : ViewModelBase
     public DelegateCommand CmdShowMessageBox => new(() =>
     {
         // Simple modal dialog represented as a MessageBox
-        var title = "MessageBox Title Here";
+        var title = "Modal MessageBox";
         var message = "Hello, I am a simple MessageBox modal window with an OK button.\n\n" +
                       "When too much text is added, a scrollbar will appear.";
 
-        _dialogService.ShowDialog(nameof(MessageBoxView), new DialogParameters($"title={title}&message={message}"), r => { });
-    });
-
-    public DelegateCommand CmdShowModalDialog => new(() =>
-    {
-        ;
+        // Note: We're disregarding the dialog result
+        _dialogService.ShowDialog(
+            nameof(MessageBoxView),
+            new DialogParameters
+            {
+                { "title", title },
+                { "message", message },
+            });
     });
 
     public DelegateCommand CmdShowNonModalDialog => new(() =>
     {
-        ;
+        // Simple modal dialog represented as a MessageBox
+        var title = "Non-Modal MessageBox";
+        var message = "Hello, I am a non-modal MessageBox with an OK button.\n\n" +
+                      "Notice how you can still interact with the parent window.";
+
+        _dialogService.Show(
+            nameof(MessageBoxView),
+            new DialogParameters($"title={title}&message={message}"), r =>
+            {
+                ReturnedResult = r.Result.ToString();
+            });
     });
 }

@@ -7,20 +7,20 @@
         x:Class="SampleApp.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/logo.ico"
-        Title="{Binding Title}"
-        Height="350" Width="500">
+        Height="350" Width="500"
+        Title="{Binding Title}">
+  <Panel>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
+      <Label Content="Click to show a dialog window" />
 
-  <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="5">
-    <Label Content="Click to show a dialog window" />
-    
-    <Button Command="{Binding CmdShowMessageBox}" Content="Simple MessageBox Dialog" />
-    <Button Command="{Binding CmdShowModalDialog}" Content="Custom Modal Dialog" />
-    <Button Command="{Binding CmdShowNonModalDialog}" Content="Non-Modal Dialog (Without Parent)" />
+      <Button Command="{Binding CmdShowMessageBox}" Content="Modal MessageBox" />
+      <Button Command="{Binding CmdShowNonModalDialog}" Content="Non-Modal Dialog" />
 
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Result:" FontWeight="Bold" />
-      <Label Content="{Binding ReturnedResult}" />
+      <StackPanel Orientation="Horizontal">
+        <Label Content="Result:" FontWeight="Bold" />
+        <Label Content="{Binding ReturnedResult}" />
+      </StackPanel>
+
     </StackPanel>
-
-  </StackPanel>
+  </Panel>
 </Window>
