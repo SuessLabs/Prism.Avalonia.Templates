@@ -405,7 +405,7 @@ dotnet_diagnostic.VSSpell002.severity = none
 # SA0001: XML comment analysis is disabled due to project configuration
 dotnet_diagnostic.SA0001.severity = none
 
-# Generated XAML bullshit
+# Generated XAML
 [*.sg.cs]
 # CS1591: Missing XML comment for publicly visible type or member
 dotnet_diagnostic.CS1591.severity = none
