@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace SampleApp;
+namespace SampleApp.Views;
 
 public partial class SidebarView : UserControl
 {

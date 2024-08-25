@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace SampleApp;
+namespace SampleApp.Views;
 
 public partial class SettingsView : UserControl
 {

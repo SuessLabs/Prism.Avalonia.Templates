@@ -4,10 +4,6 @@ public class MainWindowViewModel : ViewModelBase
 {
     public MainWindowViewModel()
     {
-        Title = "Welcome to Prism.Avalonia!";
+        Title = "Prism.Avalonia - Full App Template!";
     }
-
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Hello from, Prism.Avalonia!";
-#pragma warning restore CA1822 // Mark members as static
 }

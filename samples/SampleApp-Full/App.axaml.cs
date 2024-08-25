@@ -32,6 +32,10 @@ public partial class App : PrismApplication
     {
         Debug.WriteLine("RegisterTypes()");
 
+        // Note:
+        // SidebarView isn't listed, note we're using `AutoWireViewModel` in the View's AXAML.
+        // See the line, `prism:ViewModelLocator.AutoWireViewModel="True"`
+
         // Services
         containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
 

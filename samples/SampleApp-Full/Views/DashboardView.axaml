@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
-             xmlns:vm="using:SampleApp.ViewModels"
+             xmlns:vm="clr-namespace:SampleApp.ViewModels;assembly=SampleApp"
              d:DesignHeight="350" d:DesignWidth="500" mc:Ignorable="d"
              x:Class="SampleApp.Views.DashboardView"
              x:CompileBindings="True"

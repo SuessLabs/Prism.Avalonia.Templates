@@ -1,68 +1,58 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SampleApp.Views;
+using System.Diagnostics;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation.Regions;
+using SampleApp.Views;
 
-namespace SampleApp.ViewModels
+namespace SampleApp.ViewModels;
+
+public class SettingsSubViewModel : ViewModelBase
 {
-    public class SettingsSubViewModel : ViewModelBase
+    private readonly IRegionManager _regionManager;
+    private IRegionNavigationJournal? _journal;
+    private string? _messageText = string.Empty;
+    private string? _messageNumber = string.Empty;
+
+    public SettingsSubViewModel(IRegionManager regionManager)
     {
-        private readonly IRegionManager _regionManager;
-        private IRegionNavigationJournal? _journal;
-        private string _messageText = string.Empty;
-        private string _messageNumber = string.Empty;
+        _regionManager = regionManager;
 
-        public SettingsSubViewModel(IRegionManager regionManager)
-        {
-            _regionManager = regionManager;
+        Title = "Settings - SubView";
+    }
 
-            Title = "Settings - SubView";
-        }
+    public DelegateCommand CmdNavigateBack => new(() =>
+    {
+        // Go back to the previous calling page, otherwise, Dashboard.
+        if (_journal != null && _journal.CanGoBack)
+            _journal.GoBack();
+        else
+            _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
+    });
 
-        public DelegateCommand CmdNavigateBack => new DelegateCommand(() =>
-        {
-            // Go back to the previous calling page, otherwise, Dashboard.
-            if (_journal != null && _journal.CanGoBack)
-                _journal.GoBack();
-            else
-                _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
-        });
+    public string? MessageText { get => _messageText; set => SetProperty(ref _messageText, value); }
 
-        public string MessageText
-        {
-            get => _messageText;
-            set => SetProperty(ref _messageText, value);
-        }
+    public string? MessageNumber { get => _messageNumber; set => SetProperty(ref _messageNumber, value); }
 
-        public string MessageNumber
-        {
-            get => _messageNumber;
-            set => SetProperty(ref _messageNumber, value);
-        }
+    /// <summary>Navigation completed successfully.</summary>
+    /// <param name="navigationContext">Navigation context.</param>
+    public override void OnNavigatedTo(NavigationContext navigationContext)
+    {
+        // Used to "Go Back" to parent
+        _journal = navigationContext.NavigationService.Journal;
 
-        /// <summary>Navigation completed successfully.</summary>
-        /// <param name="navigationContext">Navigation context.</param>
-        public override void OnNavigatedTo(NavigationContext navigationContext)
-        {
-            // Used to "Go Back" to parent
-            _journal = navigationContext.NavigationService.Journal;
+        // Get and display our parameters
+        if (navigationContext.Parameters.TryGetValue("key1", out string? value))
+            MessageText = value;
 
-            // Display our parameters
-            MessageText = navigationContext.Parameters["key1"].ToString();
-            MessageNumber = navigationContext.Parameters["key2"].ToString();
-        }
+        if (navigationContext.Parameters.TryGetValue("key2", out int msgNum))
+            MessageNumber = msgNum.ToString();
+    }
 
-        public override bool OnNavigatingTo(NavigationContext navigationContext)
-        {
-            // Navigation permission sample:
-            // Don't allow navigation if our keys are missing
-            return navigationContext.Parameters.ContainsKey("key1") &&
-                   navigationContext.Parameters.ContainsKey("key2");
-        }
+    public override bool OnNavigatingTo(NavigationContext navigationContext)
+    {
+        Debug.WriteLine("OnNavigatingTo");
+        // Navigation permission sample:
+        // Don't allow navigation if our keys are missing
+        return navigationContext.Parameters.ContainsKey("key1") &&
+               navigationContext.Parameters.ContainsKey("key2");
     }
 }
