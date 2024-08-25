@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleBaseApp", "csharp\app-prism-basic\SampleBaseApp.csproj", "{615A7575-77A0-45B3-BC4C-C66841C30A24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleBaseApp", "..\templates\csharp\app-prism-basic\SampleBaseApp.csproj", "{615A7575-77A0-45B3-BC4C-C66841C30A24}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismSimpleDialogTemplate", "csharp\app-prism-dialog\PrismSimpleDialogTemplate.csproj", "{0F0A848E-C972-4CA1-9713-DCE0D01EA326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismSimpleDialogTemplate", "..\templates\csharp\app-prism-dialog\PrismSimpleDialogTemplate.csproj", "{0F0A848E-C972-4CA1-9713-DCE0D01EA326}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismSampleMvvmApp", "csharp\app-prism-sample\PrismSampleMvvmApp.csproj", "{76BBEECC-1126-4E95-B5B1-A357A9ED5D43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismSampleMvvmApp", "..\templates\csharp\app-prism-sample\PrismSampleMvvmApp.csproj", "{76BBEECC-1126-4E95-B5B1-A357A9ED5D43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseApp", "BaseApp", "{8B44B871-B722-4150-B0DB-8227E4175031}"
 	ProjectSection(SolutionItems) = preProject
-		csharp\app-prism-basic\.template.config\template.json = csharp\app-prism-basic\.template.config\template.json
+		..\templates\csharp\app-prism-basic\.template.config\template.json = ..\templates\csharp\app-prism-basic\.template.config\template.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FullApp", "FullApp", "{5E20C79A-A47D-4308-89AF-8F7202EDB0B2}"
 	ProjectSection(SolutionItems) = preProject
-		csharp\app-prism-sample\.template.config\template.json = csharp\app-prism-sample\.template.config\template.json
+		..\templates\csharp\app-prism-sample\.template.config\template.json = ..\templates\csharp\app-prism-sample\.template.config\template.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DialogApp", "DialogApp", "{B36B840D-2CA9-4F91-BE70-45B655013CF3}"
 	ProjectSection(SolutionItems) = preProject
-		csharp\app-prism-dialog\.template.config\template.json = csharp\app-prism-dialog\.template.config\template.json
+		..\templates\csharp\app-prism-dialog\.template.config\template.json = ..\templates\csharp\app-prism-dialog\.template.config\template.json
 	EndProjectSection
 EndProject
 Global
