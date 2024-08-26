@@ -1,64 +1,32 @@
-﻿using System;
 using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Data.Core;
+using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using Prism.DryIoc;
 using Prism.Ioc;
-using SampleBaseApp.Views;
+using SampleApp.ViewModels;
+using SampleApp.Views;
 
-namespace SampleBaseApp;
+namespace SampleApp;
 
 public partial class App : PrismApplication
 {
-  public override void Initialize()
-  {
-    Console.WriteLine("Initialize()");
-
-    AvaloniaXamlLoader.Load(this);
-
-    // Required to initialize Prism.Avalonia - DO NOT REMOVE
-    base.Initialize();
-  }
-
-  protected override AvaloniaObject CreateShell()
-  {
-    Console.WriteLine("CreateShell()");
-
-    return Container.Resolve<MainWindow>();
-  }
-
-  protected override void RegisterTypes(IContainerRegistry containerRegistry)
-  {
-    // Add Services and ViewModel registrations here
-
-    Console.WriteLine("RegisterTypes()");
-
-    // -=[ Sample ]=-
-    //
-    //  // Services
-    //  containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
-    //
-    //  // Views - Region Navigation
-    //  containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();
-  }
-
-  /**
-   * NOT NEEDED:
-   *  The following is used by vanilla Avalonia. Prism.Avalonia only needs, `CreateShell()`
-   *
-  public override void OnFrameworkInitializationCompleted()
-  {
-    if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+    public override void Initialize()
     {
-      // Line below is needed to remove Avalonia data validation.
-      // Without this line you will get duplicate validations from both Avalonia and CT
-      BindingPlugins.DataValidators.RemoveAt(0);
-      desktop.MainWindow = new MainWindow
-      {
-        DataContext = new MainWindowViewModel(),
-      };
+        AvaloniaXamlLoader.Load(this);
+
+        // Required when overriding Initialize
+        base.Initialize();
     }
 
-    base.OnFrameworkInitializationCompleted();
-  }
-  */
+    protected override AvaloniaObject CreateShell()
+    {
+        return Container.Resolve<MainWindow>();
+    }
+
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        // Register you Services, Views, Dialogs, etc.
+    }
 }
