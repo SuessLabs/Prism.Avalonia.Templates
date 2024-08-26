@@ -19,12 +19,10 @@ Template options:
   -A, --AvaloniaVersion <11.0.7|11.1.3>  The target version of Avalonia NuGet packages.
                                          Type: choice
                                            11.1.3           Target 11.1.3 (default)
-                                           11.0.7           Target 11.0.7
                                          Default: 11.1.3
   -P, --PrismVersion <9.0.537.11130>     The target version of Prism.Avalonia NuGet packages.
                                          Type: choice
                                            9.0.537.11130    Target 9.0.537.11130 (Latest stable).
-                                           8.1.97.11073     Target 8.1.97.11073.
                                          Default: 8.1.97.11073
 #>
 
@@ -91,7 +89,8 @@ function Test-Template {
 
   # Instantiate each item template in the project
   Exec { dotnet new prism.avalonia.event -o $outDir/$lang/$folderName -n NewEvent -lang $lang }
-  Exec { dotnet new prism.avalonia.usercontrol -o $outDir/$lang/$folderName -n NewUserControl }
+  Exec { dotnet new prism.avalonia.usercontrol -o $outDir/$lang/$folderName/Views -n NewUserControl }
+  Exec { dotnet new prism.avalonia.viewmodel -o $outDir/$lang/$folderName/ViewModels -n NewViewModel }
   Exec { dotnet new prism.avalonia.window -o $outDir/$lang/$folderName -n NewWindow }
 
   # Build
@@ -146,20 +145,21 @@ if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output", "binlog", "test.binlog"))
 
 # Build the project only once with all item templates using .net8.0 tfm for C#
-Test-Template "prism.avalonia.app.full" "TestAvaloniaItems" "C#" "A" "$latestAvalonia" $binlog
+Test-Template "prism.avalonia.app" "TestAvaloniaItems" "C#" "A" "$latestAvalonia" $binlog
+##Test-Template "prism.avalonia.app.full" "TestAvaloniaItems" "C#" "A" "$latestAvalonia" $binlog
 
 # Bare-bones app
 Create-And-Build "prism.avalonia.app" "TestAvaloniaBase" "C#" "A" "$latestAvalonia" $binlog
 # Create-And-Build "prism.avalonia.app" "TestAvaloniaBase6" "C#" "F" "net6.0" $binlog
 
-# Base MVVM App Template Tests
-# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$latestAvalonia" $binlog
-# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$olderAvalonia" $binlog
-# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "F" "net6.0" $binlog
-
 # Dialog App Template Tests
 Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "$latestAvalonia" $binlog
 #Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "$olderAvalonia" $binlog
+
+# Full (most-features) MVVM App Template Tests
+Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$latestAvalonia" $binlog
+# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$olderAvalonia" $binlog
+# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "F" "net6.0" $binlog
 
 # desktop/android/ios/browser (not implemented)
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "f" "net8.0" $binlog
