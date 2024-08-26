@@ -1,8 +1,6 @@
-﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
-namespace PrismSampleMvvmApp.Views;
+namespace SampleApp.Views;
 
 public partial class SidebarView : UserControl
 {

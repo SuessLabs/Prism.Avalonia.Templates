@@ -2,16 +2,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:prism="http://prismlibrary.com/"
-             xmlns:vm="using:PrismSampleMvvmApp.ViewModels"
+             xmlns:vm="clr-namespace:SampleApp.ViewModels;assembly=SampleApp"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             prism:ViewModelLocator.AutoWireViewModel="True"
-             x:Class="PrismSampleMvvmApp.Views.SubSettingsView"
-             x:DataType="vm:SubSettingsViewModel">
+             x:Class="SampleApp.Views.SettingsSubView"
+             x:CompileBindings="True"
+             x:DataType="vm:SettingsSubViewModel">
   <DockPanel>
     <StackPanel DockPanel.Dock="Top" Spacing="5">
       <Grid Background="LightGray" ColumnDefinitions="Auto, *">
-        <Button Content="Back" Command="{Binding CmdNavigateBack}" CornerRadius="10" />
+        <Button Command="{Binding CmdNavigateBack}" CornerRadius="10">
+          <PathIcon Data="{StaticResource arrow_reply_regular}" />
+        </Button>
         <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" Margin="5"  VerticalAlignment="Center" />
       </Grid>
     </StackPanel>

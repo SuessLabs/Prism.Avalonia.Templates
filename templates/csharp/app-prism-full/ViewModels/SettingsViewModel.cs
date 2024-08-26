@@ -1,9 +1,10 @@
-﻿using PrismSampleMvvmApp.Views;
+using SampleApp.Views;
 using Prism.Commands;
 using Prism.Navigation.Regions;
 using Prism.Navigation;
+using System.Diagnostics;
 
-namespace PrismSampleMvvmApp.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class SettingsViewModel : ViewModelBase
 {
@@ -17,6 +18,7 @@ public class SettingsViewModel : ViewModelBase
 
     public DelegateCommand CmdNavigateToChild => new(() =>
     {
+        Debug.WriteLine("CmdNavigateToChild() - Navigating away...");
         var navParams = new NavigationParameters
         {
             { "key1", "Some text" },
@@ -25,12 +27,13 @@ public class SettingsViewModel : ViewModelBase
 
         _regionManager.RequestNavigate(
             RegionNames.ContentRegion,
-            nameof(SubSettingsView),
+            nameof(SettingsSubView),
             navParams);
     });
 
     public override void OnNavigatedFrom(NavigationContext navigationContext)
     {
+        Debug.WriteLine("OnNavigatedFrom()");
         base.OnNavigatedFrom(navigationContext);
     }
 }
