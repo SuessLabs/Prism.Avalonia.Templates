@@ -1,10 +1,11 @@
-﻿using Prism.Mvvm;
+using Prism.Mvvm;
 
-namespace SampleBaseApp.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class ViewModelBase : BindableBase
 {
-  private string _title = string.Empty;
+    private string _title = string.Empty;
 
-  public string Title { get => _title; set => SetProperty(ref _title, value); }
+    /// <summary>Gets or sets the title of the view.</summary>
+    public string Title { get => _title; set => SetProperty(ref _title, value); }
 }

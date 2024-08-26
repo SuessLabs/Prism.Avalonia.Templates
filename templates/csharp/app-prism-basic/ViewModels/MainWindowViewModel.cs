@@ -1,22 +1,13 @@
-﻿using Prism.Commands;
-
-namespace SampleBaseApp.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-  private int _clickCounter = 0;
+    public MainWindowViewModel()
+    {
+        Title = "Welcome to Prism.Avalonia!";
+    }
 
-  public MainWindowViewModel()
-  {
-    Title = "Welcome to Prism.Avalonia by Suess Labs!";
-  }
-
-  public string Greeting => "Welcome to Prism.Avalonia!";
-
-  public int ClickCounter { get => _clickCounter; set => SetProperty(ref _clickCounter, value); }
-
-  public DelegateCommand CmdIncrementCounter => new(() =>
-  {
-    ClickCounter++;
-  });
+#pragma warning disable CA1822 // Mark members as static
+    public string Greeting => "Hello from, Prism.Avalonia!";
+#pragma warning restore CA1822 // Mark members as static
 }

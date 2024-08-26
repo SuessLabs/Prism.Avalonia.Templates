@@ -17,7 +17,7 @@
   "name": "Prism.Avalonia .NET - Empty App",
   "preferNameDirectory": true,
   "shortName": "prism.avalonia.app",
-  "sourceName": "SampleBaseApp",
+  "sourceName": "SampleApp",
   "defaultName": "PrismSampleTemplate",
   "tags": {
     "language": "C#",
