@@ -1,0 +1,71 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Damian Suess",
+  "classifications": [
+    "Desktop",
+    "Xaml",
+    "Axaml",
+    "Avalonia",
+    "Prism",
+    "Windows",
+    "Linux",
+    "macOS"
+  ],
+  "description": "A full cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.",
+  "groupidentity": "Prism.Avalonia.App.Full",
+  "identity": "Prism.Avalonia.App.Full",
+  "name": "Prism.Avalonia .NET - Sample Full SideBar App",
+  "preferNameDirectory": true,
+  "shortName": "prism.avalonia.app.full",
+  "sourceName": "PrismSampleMvvmApp",
+  "defaultName": "PrismSampleTemplate",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net8.0",
+          "description": "Target net8.0 (default)"
+        }
+      ],
+      "replaces": "net8.0",
+      "defaultValue": "net8.0"
+    },
+    "AvaloniaVersion": {
+      "type": "parameter",
+      "description": "The target version of Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "11.1.3",
+          "description": "Target 11.1.3 (Latest stable)"
+        }
+      ],
+      "replaces": "AvaloniaVersionTemplateParameter",
+      "defaultValue": "11.1.3"
+    },
+    "PrismVersion": {
+      "type": "parameter",
+      "description": "The target version of Prism.Avalonia NuGet packages.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "8.1.97.11073",
+          "description": "Target 8.1.97.11073 (Latest stable)."
+        }
+      ],
+      "replaces": "PrismVersionTemplateParameter",
+      "defaultValue": "8.1.97.11073"
+    },
+    "AvaloniaStableChosen": {
+      "type": "computed",
+      "value": "(AvaloniaVersion == \"11.1.3\")"
+    }
+  }
+}

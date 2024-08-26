@@ -6,3 +6,8 @@ if (Test-Path "obj/") { Remove-Item obj/**/ -Force -Recurse }
 $result = dotnet pack | select-string "Successfully created package '(.*)'" -AllMatches
 $package = $result.Matches.Groups[1]
 dotnet new install $package
+
+# Debug Commands
+##dotnet pack
+##dotnet new install Templates.Prism.Avalonia
+##dotnet new install .

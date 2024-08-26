@@ -14,16 +14,17 @@ Usage:
 Template options:
   -F, --Framework <net8.0>               The target framework for the project.
                                          Type: choice
-                                           net8.0  Target net8.0
+                                           net8.0           Target net8.0
                                          Default: net8.0
-  -A, --AvaloniaVersion <11.0.7|11.1.1>  The target version of Avalonia NuGet packages.
+  -A, --AvaloniaVersion <11.0.7|11.1.3>  The target version of Avalonia NuGet packages.
                                          Type: choice
-                                           11.0.7  Target 11.0.7
-                                           11.1.1  Target 11.1.1 (Latest stable)
-                                         Default: 11.1.1
-  -P, --PrismVersion <8.1.97.11073>      The target version of Prism.Avalonia NuGet packages.
+                                           11.1.3           Target 11.1.3 (default)
+                                           11.0.7           Target 11.0.7
+                                         Default: 11.1.3
+  -P, --PrismVersion <9.0.537.11130>     The target version of Prism.Avalonia NuGet packages.
                                          Type: choice
-                                           8.1.97.11073  Target 8.1.97.11073 (Latest stable).
+                                           9.0.537.11130    Target 9.0.537.11130 (Latest stable).
+                                           8.1.97.11073     Target 8.1.97.11073.
                                          Default: 8.1.97.11073
 #>
 
@@ -33,6 +34,9 @@ param()
 
 Set-StrictMode -Version latest
 $ErrorActionPreference = "Stop"
+
+$latestAvalonia = "11.1.3";
+#$olderAvalonia  = "11.0.7";
 
 # Taken from psake https://github.com/psake/psake
 <#
@@ -73,6 +77,8 @@ function Test-Template {
     [Parameter(Position=5,Mandatory=0)][string]$bl
   )
 
+  Write-Verbose "Testing Template: $template"
+
   # $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
   $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output"))
   $folderName = $name + $parameterName + $value
@@ -102,6 +108,7 @@ function Create-And-Build {
     [Parameter(Position=5,Mandatory=0)][string]$bl
   )
 
+  Write-Verbose "Create-And-Build: $template"
   $folderName = $name + $parameterName + $value
 
   # Remove dots and - from folderName because in sln it will cause errors when building project
@@ -139,25 +146,25 @@ if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
 $binlog = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output", "binlog", "test.binlog"))
 
 # Build the project only once with all item templates using .net8.0 tfm for C#
-Test-Template "prism.avalonia.app.sample" "TestAvaloniaItems" "C#" "A" "11.1.1" $binlog
+Test-Template "prism.avalonia.app.full" "TestAvaloniaItems" "C#" "A" "$latestAvalonia" $binlog
 
 # Bare-bones app
-Create-And-Build "prism.avalonia.app" "TestAvaloniaBase" "C#" "A" "11.1.1" $binlog
+Create-And-Build "prism.avalonia.app" "TestAvaloniaBase" "C#" "A" "$latestAvalonia" $binlog
 # Create-And-Build "prism.avalonia.app" "TestAvaloniaBase6" "C#" "F" "net6.0" $binlog
 
 # Base MVVM App Template Tests
-Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "A" "11.0.7" $binlog
-Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "A" "11.1.1" $binlog
-# Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "F" "net6.0" $binlog
-# Create-And-Build "prism.avalonia.app.sample" "TestAvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog (COMING SOON!!)
+Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$latestAvalonia" $binlog
+#Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$olderAvalonia" $binlog
+# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "F" "net6.0" $binlog
+# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog (COMING SOON!!)
 
 # Dialog App Template Tests
-Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "11.0.7" $binlog
-Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "11.1.1" $binlog
+Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "$latestAvalonia" $binlog
+#Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "$olderAvalonia" $binlog
 
 # desktop/android/ios/browser (not implemented)
 # Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "f" "net8.0" $binlog
-# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "av" "11.1.0" $binlog
+# Create-And-Build "prism.avalonia.xplat" "PrismAvaloniaXplat" "C#" "av" "$latestAvalonia" $binlog
 
 # Ignore errors when files are still used by another process
 Write-Output "Cleanup output (keeping, 'output/binlog')"

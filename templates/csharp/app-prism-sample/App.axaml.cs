@@ -5,7 +5,7 @@ using PrismSampleMvvmApp.ViewModels;
 using PrismSampleMvvmApp.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
-using Prism.Regions;
+using Prism.Navigation.Regions;
 using PrismSampleMvvmApp.Services;
 
 namespace PrismSampleMvvmApp;

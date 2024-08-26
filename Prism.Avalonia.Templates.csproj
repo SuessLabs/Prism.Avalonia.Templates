@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>8.1.97.11002</PackageVersion>
+    <PackageVersion>9.0.537.11100</PackageVersion>
     <PackageId>Templates.Prism.Avalonia</PackageId>
     <Title>Prism.Avalonia Templates</Title>
     <Authors>Damian Suess</Authors>
@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**;templates\app-prism-8-*\;templates\**\.vs\" />
     <Compile Remove="**\*" />
     <None Include="readme.md" Pack="true" PackagePath="\" />
     <None Include="Prism.Avalonia.png" Pack="true" PackagePath="\" />

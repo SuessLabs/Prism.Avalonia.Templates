@@ -1,6 +1,7 @@
 ﻿using PrismSampleMvvmApp.Views;
 using Prism.Commands;
-using Prism.Regions;
+using Prism.Navigation.Regions;
+using Prism.Navigation;
 
 namespace PrismSampleMvvmApp.ViewModels;
 
@@ -14,11 +15,13 @@ public class SettingsViewModel : ViewModelBase
         Title = "Settings";
     }
 
-    public DelegateCommand CmdNavigateToChild => new DelegateCommand(() =>
+    public DelegateCommand CmdNavigateToChild => new(() =>
     {
-        var navParams = new NavigationParameters();
-        navParams.Add("key1", "Some text");
-        navParams.Add("key2", 999);
+        var navParams = new NavigationParameters
+        {
+            { "key1", "Some text" },
+            { "key2", 999 }
+        };
 
         _regionManager.RequestNavigate(
             RegionNames.ContentRegion,
