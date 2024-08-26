@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace SampleApp.Views;
 
-public partial class SettingsView : UserControl
+public partial class SettingsSubView : UserControl
 {
-    public SettingsView()
+    public SettingsSubView()
     {
         InitializeComponent();
     }

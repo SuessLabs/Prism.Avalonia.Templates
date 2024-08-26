@@ -1,30 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PrismSampleMvvmApp.Views;
+using System.Diagnostics;
 using Prism.Commands;
-using Prism.Mvvm;
 using Prism.Navigation.Regions;
+using SampleApp.Views;
 
-namespace PrismSampleMvvmApp.ViewModels;
+namespace SampleApp.ViewModels;
 
-public class SubSettingsViewModel : ViewModelBase
+public class SettingsSubViewModel : ViewModelBase
 {
     private readonly IRegionManager _regionManager;
     private IRegionNavigationJournal? _journal;
-    private string _messageText = string.Empty;
-    private string _messageNumber = string.Empty;
+    private string? _messageText = string.Empty;
+    private string? _messageNumber = string.Empty;
 
-    public SubSettingsViewModel(IRegionManager regionManager)
+    public SettingsSubViewModel(IRegionManager regionManager)
     {
         _regionManager = regionManager;
 
         Title = "Settings - SubView";
     }
 
-    public DelegateCommand CmdNavigateBack => new DelegateCommand(() =>
+    public DelegateCommand CmdNavigateBack => new(() =>
     {
         // Go back to the previous calling page, otherwise, Dashboard.
         if (_journal != null && _journal.CanGoBack)
@@ -33,17 +28,9 @@ public class SubSettingsViewModel : ViewModelBase
             _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
     });
 
-    public string MessageText
-    {
-        get => _messageText;
-        set => SetProperty(ref _messageText, value);
-    }
+    public string? MessageText { get => _messageText; set => SetProperty(ref _messageText, value); }
 
-    public string MessageNumber
-    {
-        get => _messageNumber;
-        set => SetProperty(ref _messageNumber, value);
-    }
+    public string? MessageNumber { get => _messageNumber; set => SetProperty(ref _messageNumber, value); }
 
     /// <summary>Navigation completed successfully.</summary>
     /// <param name="navigationContext">Navigation context.</param>
@@ -52,15 +39,19 @@ public class SubSettingsViewModel : ViewModelBase
         // Used to "Go Back" to parent
         _journal = navigationContext.NavigationService.Journal;
 
-        // Display our parameters
-        MessageText = navigationContext.Parameters["key1"].ToString();
-        MessageNumber = navigationContext.Parameters["key2"].ToString();
+        // Get and display our parameters
+        if (navigationContext.Parameters.TryGetValue("key1", out string? value))
+            MessageText = value;
+
+        if (navigationContext.Parameters.TryGetValue("key2", out int msgNum))
+            MessageNumber = msgNum.ToString();
     }
 
     public override bool OnNavigatingTo(NavigationContext navigationContext)
     {
+        Debug.WriteLine("OnNavigatingTo");
+
         // Navigation permission sample:
-        // Don't allow navigation if our keys are missing
         return navigationContext.Parameters.ContainsKey("key1") &&
                navigationContext.Parameters.ContainsKey("key2");
     }

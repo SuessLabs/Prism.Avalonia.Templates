@@ -1,17 +1,22 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- Add Controls for Previewer Here -->
   <Design.PreviewWith>
-    <Border Padding="20">
-      <!-- Add Controls for Previewer Here -->
+    <StackPanel Margin="10" Spacing="10" Orientation="Horizontal">
+      <PathIcon Data="{StaticResource arrow_reply_regular}" />
+      <PathIcon Data="{StaticResource line_horizontal_3_regular}" />
+      <PathIcon Data="{StaticResource home_regular}" />
       <PathIcon Data="{StaticResource lock_regular}" />
-    </Border>
+      <PathIcon Data="{StaticResource settings_regular}" />
+    </StackPanel>
   </Design.PreviewWith>
 
   <!--
     Add Styles Here
     References
     - https://avaloniaui.github.io/icons.html
-    - https://docs.avaloniaui.net/tutorials/music-store-app/add-and-layout-controls
+    - https://docs.avaloniaui.net/docs/tutorials/music-store-app/add-and-layout-controls
   -->
   <Style>
     <Style.Resources>

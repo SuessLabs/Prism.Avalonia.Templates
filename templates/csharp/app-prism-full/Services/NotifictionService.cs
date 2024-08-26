@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Notifications;
 
-namespace PrismSampleMvvmApp.Services;
+namespace SampleApp.Services;
 
 public class NotificationService : INotificationService
 {
@@ -13,15 +13,12 @@ public class NotificationService : INotificationService
     public int NotificationTimeout
     {
         get => _notificationTimeout;
-        set
-        {
-            _notificationTimeout = (value < 0) ? 0 : value;
-        }
+        set => _notificationTimeout = (value < 0) ? 0 : value;
     }
 
     /// <summary>Set the host window.</summary>
     /// <param name="hostWindow">Parent window.</param>
-    public void SetHostWindow(Window hostWindow)
+    public void SetHostWindow(TopLevel hostWindow)
     {
         var notificationManager = new WindowNotificationManager(hostWindow)
         {
@@ -43,11 +40,11 @@ public class NotificationService : INotificationService
         {
             nm.Show(
                 new Notification(
-                    title,
-                    message,
-                    NotificationType.Information,
-                    TimeSpan.FromSeconds(_notificationTimeout),
-                    onClick));
+                title,
+                message,
+                NotificationType.Information,
+                TimeSpan.FromSeconds(_notificationTimeout),
+                onClick));
         }
     }
 }

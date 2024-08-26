@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 using Avalonia.Controls;
 
-namespace PrismSampleMvvmApp.Services;
+namespace SampleApp.Services;
 
 public interface INotificationService
 {
     int NotificationTimeout { get; set; }
 
-    void SetHostWindow(Window window);
+    void SetHostWindow(TopLevel window);
 
     void Show(string title, string message, Action? onClick = null);
 }

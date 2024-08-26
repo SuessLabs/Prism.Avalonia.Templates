@@ -1,15 +1,14 @@
-﻿using PrismSampleMvvmApp.Views;
+using SampleApp.Views;
 using Prism.Commands;
 using Prism.Navigation.Regions;
 
-namespace PrismSampleMvvmApp.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class SidebarViewModel : ViewModelBase
 {
     private const int Collapsed = 40;
     private const int Expanded = 200;
 
-    private readonly IRegionNavigationJournal _journal;
     private readonly IRegionManager _regionManager;
     private int _flyoutWidth;
 
@@ -22,7 +21,6 @@ public class SidebarViewModel : ViewModelBase
 
     public DelegateCommand CmdDashboard => new(() =>
     {
-        //// _journal.Clear();
         _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
     });
 
@@ -34,9 +32,5 @@ public class SidebarViewModel : ViewModelBase
 
     public DelegateCommand CmdSettings => new(() => _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(SettingsView)));
 
-    public int FlyoutWidth
-    {
-        get => _flyoutWidth;
-        set => SetProperty(ref _flyoutWidth, value);
-    }
+    public int FlyoutWidth { get => _flyoutWidth; set => SetProperty(ref _flyoutWidth, value); }
 }
