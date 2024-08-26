@@ -1,67 +1,52 @@
-﻿using Prism.Commands;
-using Prism.Navigation.Regions;
-using Prism.Services.Dialogs;
+using DryIoc;
+using Prism.Commands;
+using Prism.Dialogs;
 
-namespace PrismSimpleDialogTemplate.ViewModels;
+namespace SampleApp.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
     private readonly IDialogService _dialogService;
-    private string _returnedResult;
+    private string _returnedResult = string.Empty;
 
-    public MainWindowViewModel(IRegionManager regionManager, IDialogService dialogService)
+    public MainWindowViewModel(IDialogService dialogService)
     {
         _dialogService = dialogService;
 
-        Title = "Prism.Avalonia Dialog App";
+        Title = "Prism.Avalonia - Dialog Sample App";
     }
 
-    public DelegateCommand CmdShowDialog => new(() =>
-    {
-        var message = "This is a message that should be shown in the dialog";
-
-        _dialogService.ShowDialog("NotificationDialogView", new DialogParameters($"message={message}"), r =>
-        {
-            if (r is null)
-            {
-                Title = "Try Again";
-                ReturnedResult = "Null Result Returned";
-            }
-            
-            ReturnedResult = r.Result.ToString();
-
-            Title = r.Result switch
-            {
-                ButtonResult.None => "Result is None",
-                ButtonResult.OK => "Result is OK",
-                ButtonResult.Cancel => "Result is Cancel",
-                _ => "Result was unknown"
-            };
-        });
-    });
-    
-    public DelegateCommand CmdShowRegular => new DelegateCommand(() =>
-    {
-        _dialogService.Show("NotificationDialogView", r =>
-        {
-            if (r is null)
-            {
-                Title = "Try again";
-                ReturnedResult = "Null result returned";
-            }
-
-            ReturnedResult = r.Result.ToString();
-
-            // Same as if-statements, just a switch-expression.
-            Title = r.Result switch
-            {
-                ButtonResult.None => "Result is None",
-                ButtonResult.OK => "Result is OK",
-                ButtonResult.Cancel => "Result is Cancel",
-                _ => "Result was unknown",
-            };
-        });
-    });
-    
     public string ReturnedResult { get => _returnedResult; set => SetProperty(ref _returnedResult, value); }
+
+    public DelegateCommand CmdShowMessageBox => new(() =>
+    {
+        // Simple modal dialog represented as a MessageBox
+        var title = "Modal MessageBox";
+        var message = "Hello, I am a simple MessageBox modal window with an OK button.\n\n" +
+                      "When too much text is added, a scrollbar will appear.";
+
+        // Note: We're disregarding the dialog result
+        _dialogService.ShowDialog(
+            nameof(MessageBoxView),
+            new DialogParameters
+            {
+                { "title", title },
+                { "message", message },
+            });
+    });
+
+    public DelegateCommand CmdShowNonModalDialog => new(() =>
+    {
+        // Simple modal dialog represented as a MessageBox
+        var title = "Non-Modal MessageBox";
+        var message = "Hello, I am a non-modal MessageBox with an OK button.\n\n" +
+                      "Notice how you can still interact with the parent window.";
+
+        _dialogService.Show(
+            nameof(MessageBoxView),
+            new DialogParameters($"title={title}&message={message}"), r =>
+            {
+                ReturnedResult = r.Result.ToString();
+            });
+    });
 }

@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**;templates\app-prism-8-*\;templates\**\.vs\" />
+    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**;templates\app-prism-8-*\;templates\app-prism-full\;templates\**\.vs\" />
     <Compile Remove="**\*" />
     <None Include="readme.md" Pack="true" PackagePath="\" />
     <None Include="Prism.Avalonia.png" Pack="true" PackagePath="\" />
