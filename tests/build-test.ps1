@@ -153,10 +153,9 @@ Create-And-Build "prism.avalonia.app" "TestAvaloniaBase" "C#" "A" "$latestAvalon
 # Create-And-Build "prism.avalonia.app" "TestAvaloniaBase6" "C#" "F" "net6.0" $binlog
 
 # Base MVVM App Template Tests
-Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$latestAvalonia" $binlog
-#Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$olderAvalonia" $binlog
+# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$latestAvalonia" $binlog
+# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "A" "$olderAvalonia" $binlog
 # Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "F" "net6.0" $binlog
-# Create-And-Build "prism.avalonia.app.full" "TestAvaloniaMvvm" "C#" "P" "9.0.401.11100-pre" $binlog (COMING SOON!!)
 
 # Dialog App Template Tests
 Create-And-Build "prism.avalonia.app.dialog" "TestAvaloniaDialog" "C#" "A" "$latestAvalonia" $binlog

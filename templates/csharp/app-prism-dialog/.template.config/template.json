@@ -17,7 +17,7 @@
   "name": "Prism.Avalonia .NET - Sample Dialog App",
   "preferNameDirectory": true,
   "shortName": "prism.avalonia.app.dialog",
-  "sourceName": "PrismSimpleDialogTemplate",
+  "sourceName": "SampleApp",
   "defaultName": "PrismSimpleDialog",
   "tags": {
     "language": "C#",

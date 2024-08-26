@@ -1,43 +1,34 @@
-﻿using System;
-using Avalonia.Controls;
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Data.Core;
+using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
-using PrismSimpleDialogTemplate.ViewModels;
-using PrismSimpleDialogTemplate.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
+using SampleApp.ViewModels;
+using SampleApp.Views;
 
-namespace PrismSimpleDialogTemplate;
+namespace SampleApp;
 
-public class App : PrismApplication
+public partial class App : PrismApplication
 {
-    public App()
-    {
-        Console.WriteLine("Constructor");
-    }
-
     public override void Initialize()
     {
-        Console.WriteLine("Initialize");
         AvaloniaXamlLoader.Load(this);
-        
+
+        // Required when overriding Initialize
         base.Initialize();
     }
 
-    protected override void OnInitialized()
+    protected override AvaloniaObject CreateShell()
     {
-        // Called after initialize
-    }
-    
-    protected override void RegisterTypes(IContainerRegistry containerRegistry)
-    {
-        Console.WriteLine("Register Types");
-        containerRegistry.Register<MainWindow>();
-        containerRegistry.RegisterDialog<NotificationDialogView, NotificationDialogViewModel>();
+        return Container.Resolve<MainWindow>();
     }
 
-    protected override Window CreateShell()
+    protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        Console.WriteLine("CreateShell()");
-        return Container.Resolve<MainWindow>();
+        // Register you Services, Views, Dialogs, etc.
+
+        containerRegistry.RegisterDialog<MessageBoxView, MessageBoxViewModel>();
     }
 }
