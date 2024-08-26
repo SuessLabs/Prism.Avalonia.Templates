@@ -1,0 +1,26 @@
+﻿{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Damian Suess",
+  "classifications": [ "Desktop", "Xaml", "Axaml", "Avalonia", "Prism", "Windows", "Linux", "macOS" ],
+  "defaultName": "ViewModel",
+  "description": "A Prism ViewModel",
+  "groupidentity": "Prism.Avalonia.ViewModel",
+  "identity": "Prism.Avalonia.ViewModel",
+  "name": "Prism Avalonia ViewModel",
+  "primaryOutputs": [
+    { "path": "ViewModel.cs" }
+  ],
+  "shortName": "prism.avalonia.viewmodel",
+  "sourceName": "ViewModel",
+  "symbols": {
+    "namespace": {
+      "description": "Namespace for the generated code",
+      "replaces": "SampleApp.ViewModels",
+      "type": "parameter"
+    }
+  },
+  "tags": {
+    "language": "C#",
+    "type": "item"
+  }
+}
