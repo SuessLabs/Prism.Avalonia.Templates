@@ -23,7 +23,7 @@ Template options:
   -P, --PrismVersion <9.0.537.11130>     The target version of Prism.Avalonia NuGet packages.
                                          Type: choice
                                            9.0.537.11130    Target 9.0.537.11130 (Latest stable).
-                                         Default: 8.1.97.11073
+                                         Default: 9.0.537.11130
 #>
 
 # Enable common parameters e.g. -Verbose
@@ -77,6 +77,7 @@ function Test-Template {
 
   Write-Verbose "Testing Template: $template"
 
+  # When ran from this folder, not root.
   # $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "..", "output"))
   $outDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output"))
   $folderName = $name + $parameterName + $value
@@ -135,7 +136,6 @@ if (Test-Path $outDir -ErrorAction SilentlyContinue) {
   Remove-Item -Recurse -Force $outDir
 }
 
-## TODO: Place "binlog" in output folder
 $binLogDir = [IO.Path]::GetFullPath([IO.Path]::Combine($pwd, "output", "binlog"))
 if (Test-Path $binLogDir -ErrorAction SilentlyContinue) {
   Remove-Item -Recurse -Force $binLogDir
