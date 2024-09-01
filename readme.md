@@ -7,6 +7,10 @@ The [Prism.Avalonia Templates](https://github.com/SuessLabs/Prism.Avalonia.Templ
 
 For more information about `dotnet new` templates see [here](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/).
 
+> ## Announcement
+>
+> _[Prism.Avalonia](https://github.com/AvaloniaCommunity/Prism.Avalonia) is officially moving to  [Prism Library](https://github.com/PrismLibrary/Prism)!_ :heart:
+
 ## Installing Templates
 
 Run from a command line:
