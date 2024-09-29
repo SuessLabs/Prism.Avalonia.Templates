@@ -17,6 +17,9 @@ Run from a command line:
 
 ```powershell
 dotnet new install Templates.Prism.Avalonia
+
+# Install
+dotnet new prism.avalonia.app MyLab.SuperAwesomeApp
 ```
 
 The templates are now be available in `dotnet new list`:
