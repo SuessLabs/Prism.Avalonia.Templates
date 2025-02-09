@@ -5,6 +5,7 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:vm="using:SampleBaseApp.ViewModels"
         x:Class="SampleBaseApp.Views.MainWindow"
+        x:CompileBindings="True"
         Title="{Binding Title}"
         d:DesignHeight="350"
         d:DesignWidth="600"
