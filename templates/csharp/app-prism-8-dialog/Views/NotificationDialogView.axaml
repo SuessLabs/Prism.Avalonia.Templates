@@ -7,6 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              prism:ViewModelLocator.AutoWireViewModel="True"
              x:Class="PrismSimpleDialogTemplate.Views.NotificationDialogView"
+             x:CompileBindings="True"
              x:DataType="vm:NotificationDialogViewModel">
   <StackPanel HorizontalAlignment="Center">
     <Label Content="{Binding Title}" FontWeight="Bold" />

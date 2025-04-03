@@ -5,6 +5,7 @@
         xmlns:vm="using:SampleApp.ViewModels"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="350"
         x:Class="SampleApp.Views.MainWindow"
+        x:CompileBindings="True"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/logo.ico"
         Height="350" Width="500"

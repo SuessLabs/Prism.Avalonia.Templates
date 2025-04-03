@@ -7,6 +7,7 @@
              xmlns:vm="using:PrismSampleMvvmApp.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="PrismSampleMvvmApp.Views.DashboardView"
+             x:CompileBindings="True"
              x:DataType="vm:DashboardViewModel">
   <UserControl.Styles>
     <!--<Style Selector="Button.cmdBtn">-->
