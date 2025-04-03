@@ -19,7 +19,10 @@ Run from a command line:
 dotnet new install Templates.Prism.Avalonia
 
 # Install
-dotnet new prism.avalonia.app MySuperAwesomeApp
+dotnet new prism.avalonia.app -n MySuperAwesomeApp
+
+# Help
+dotnet new prism.avalonia.app -h
 ```
 
 The templates are now be available in `dotnet new list`:
@@ -43,6 +46,45 @@ Prism Avalonia Event                           prism.avalonia.event        [C#] 
 Prism Avalonia UserControl                     prism.avalonia.usercontrol  [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
 Prism Avalonia ViewModel                       prism.avalonia.viewmodel    [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
 Prism Avalonia Window                          prism.avalonia.window       [C#]      Desktop/Xaml/Axaml/Avalonia/Prism/Windows/Linux/macOS
+```
+
+## Commands
+
+For more help, `dotnet new prism.avalonia.app -h`
+
+```txt
+Prism.Avalonia .NET - Empty App (C#)
+Author: Damian Suess
+Description: An empty cross-platform Avalonia UI Application using the Prism.Avalonia framework with the MVVM pattern.
+
+Usage:
+  dotnet new prism.avalonia.app [options] [template options]
+
+Options:
+  -n, --name <name>       The name for the output being created. If no name is specified, the name of the output
+                          directory is used.
+  -o, --output <output>   Location to place the generated output.
+  --dry-run               Displays a summary of what would happen if the given command line were run if it would result
+                          in a template creation.
+  --force                 Forces content to be generated even if it would change existing files.
+  --no-update-check       Disables checking for the template package updates when instantiating a template.
+  --project <project>     The project that should be used for context evaluation.
+  -lang, --language <C#>  Specifies the template language to instantiate.
+  --type <project>        Specifies the template type to instantiate.
+
+Template options:
+  -F, --Framework <net8.0>            The target framework for the project.
+                                      Type: choice
+                                        net8.0  Target net8.0 (default)
+                                      Default: net8.0
+  -A, --AvaloniaVersion <11.1.3>      The target version of Avalonia NuGet packages.
+                                      Type: choice
+                                        11.1.3  Target 11.1.3 (Latest stable)
+                                      Default: 11.1.3
+  -P, --PrismVersion <9.0.537.11130>  The target version of Prism.Avalonia NuGet packages.
+                                      Type: choice
+                                        9.0.537.11130  Target 9.0.537.11130 (Latest stable).
+                                      Default: 9.0.537.11130
 ```
 
 ## Contributing
