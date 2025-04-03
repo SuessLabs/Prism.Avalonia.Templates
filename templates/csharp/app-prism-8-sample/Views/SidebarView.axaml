@@ -8,6 +8,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              Width="{Binding FlyoutWidth}"
              x:Class="PrismSampleMvvmApp.Views.SidebarView"
+             x:CompileBindings="True"
              x:DataType="vm:SidebarViewModel">
   <UserControl.Styles>
     <Style Selector="Button">
